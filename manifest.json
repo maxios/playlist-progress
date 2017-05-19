@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "utub-playlist",
+  "version": "1.0",
+
+  "description": "measure the progress of watching a youtube playlist",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["utub-playlist.js"]
+    }
+  ]
+
+}
