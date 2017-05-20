@@ -1,5 +1,8 @@
 
-var timeStamps = document.getElementsByClassName('timestamp');;
+var timeStamps = document.getElementsByClassName('timestamp');
+var bars = document.getElementsByClassName('resume-playback-progress-bar');
+var videos = document.getElementsByClassName('pl-video');
+var progress = 0;
 /*var timeStamps = [
 	'2:30',
   '3:20:10',
@@ -76,4 +79,18 @@ container.appendChild(h);
 
 
 
+// to be continue
+for(i=0; i < bars.length; i++){
+	progress += parseInt(bars[i].style.width)-2;
+}
 
+var pbar = document.createElement('div');
+style = 'height: 50px; width: 100%; background-color: grey; display: block;'
+pbar.style = style;
+var pbarg = document.createElement('div');
+pbar.appendChild(pbarg);
+pbarg.style = style;
+pbarg.style.width = (progress/(videos.length*100))*100 + '%';
+pbarg.style.backgroundColor = 'green';
+
+container.appendChild(pbar);
